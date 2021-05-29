@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '@observsta/App';
+import App from '@observagram/App';
 
 import 'unfetch/polyfill';
 
-import '@observsta/styles.scss';
+import '@observagram/styles.scss';
 
 ReactDOM.render(<App />, document.getElementById('app'));

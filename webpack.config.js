@@ -21,18 +21,12 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: 'css-loader',
-            options: {
-              importLoaders: 1,
-            },
-          },
-          'postcss-loader',
-        ],
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'],
       },
-      // NOTE: for antd theme tweaking
+      {
+        test: /\.(eot|svg|otf|ttf|woff|woff2)$/,
+        use: 'file-loader',
+      },
       {
         test: /\.less$/,
         use: [
@@ -82,10 +76,12 @@ const config = {
     extensions: ['.js', '.jsx'],
     alias: {
       'react-dom': '@hot-loader/react-dom',
-      '@observsta': path.resolve(__dirname, 'src'),
-      '@observsta-elements': path.resolve(__dirname, 'src/shared/components'),
-      '@observsta-modules': path.resolve(__dirname, 'src/modules'),
-      '@observsta-shared': path.resolve(__dirname, 'src/shared'),
+      '@observagram': path.resolve(__dirname, 'src'),
+      '@observagram-elements': path.resolve(__dirname, 'src/shared/components'),
+      '@observagram-modules': path.resolve(__dirname, 'src/modules'),
+      '@observagram-shared': path.resolve(__dirname, 'src/shared'),
+      '@assets': path.resolve(__dirname, 'assets'),
+      '@mocks': path.resolve(__dirname, 'mocks'),
     },
   },
   devServer: {

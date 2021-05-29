@@ -1,6 +1,63 @@
+:root {
+  --primary-color: 38,38,38;
+  --highlight-color: 219,219,219;
+  --fade-color: 142,142,142;
+  --primary-blue: 0,149,246;
+
+  --layout-width: 975px;
+  font-size: 16px;
+
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+@font-face {
+  font-family: 'Countryside';
+  src: local('Countryside'), url(@assets/fonts/Countryside-Regular.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'SegoeUI';
+  src: local('SegoeUI'), url(@assets/fonts/SegoeUI.ttf) format('truetype');
+}
 
+.container {
+  max-width: var(--layout-width);
+  width: 100%;
+  padding: 0 16px;
+}
+.row-flex {
+  display: flex;
+}
+
+.col-flex {
+  display: flex;
+  flex-direction: column;
+}
+
+.main-center {
+  justify-content: center;
+}
+.cross-center {
+  align-items: center;
+}
+
+.flex1 {
+  flex:1 ;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.resp-row-flex {
+  display: flex;
+}
+
+@media screen and (max-width: 736px) {
+  .resp-row-flex {
+    flex-direction: column;
+  }
+}
