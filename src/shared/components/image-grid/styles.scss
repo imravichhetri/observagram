@@ -6,8 +6,8 @@ ul.image-grid{
   li{
     display: inline-block;
     width: 32%;
-    height: 40vh;
-    margin-bottom: 28px;
+    height: 38vh;
+    margin-bottom: 25px;
     &>img{
       height: 100%;
       width: 100%;
@@ -19,7 +19,8 @@ ul.image-grid{
 @media (max-width: 735px) {
   ul.image-grid{
     li{
-      margin-bottom: 14px;
+      margin-bottom: 5px;
+      height: 17vh;
     }
   }
 }

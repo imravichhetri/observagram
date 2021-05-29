@@ -26,10 +26,11 @@ const ImageGrid = ({userImages}) => {
         console.error('IntersectionObserver is not supported');
       }
     }
-    document.addEventListener("DOMContentLoaded",intersection );
-    return () => {
-      document.removeEventListener('DOMContentLoaded',intersection)
-    }
+    intersection();
+    // document.addEventListener("DOMContentLoaded",intersection );
+    // return () => {
+    //   document.removeEventListener('DOMContentLoaded',intersection)
+    // }
   }, [])
   return (
     <ul className="image-grid">
@@ -37,7 +38,7 @@ const ImageGrid = ({userImages}) => {
         userImages.map((imageObj)=>{
           return (
             <li>
-              <img class="lazy" src={imageObj.image_url} alt="" loading="lazy"/>
+              <img class="lazy" data-src={imageObj.image_url} alt="" loading="lazy"/>
             </li>
           )
         })

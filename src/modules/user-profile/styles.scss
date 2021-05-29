@@ -88,7 +88,7 @@
   margin-right: 30px;
 }
 
-@media (max-width: 735px) {
+@media (max-width: 735px) {//mobile
   .stat-container {
     flex-direction: column;
     flex: 1;
@@ -98,9 +98,17 @@
     border-top: 1px solid rgba(var(--highlight-color),1);
     padding: 12px 0;
   }
+  .user-profile-container {
+    .user-stats > div:first-child{
+      .profile-pic{
+        height: 77px;
+        width: 77px;
+      }
+    }
+  }
 }
 
-@media (min-width: 736px) {
+@media (min-width: 736px) { //desktop
   // .user-images{
   //   border-top: unset;
   // }
