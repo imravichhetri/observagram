@@ -1,0 +1,43 @@
+{
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "checkJs": false,
+    "resolveJsonModule": true,
+    "moduleResolution": "node",
+    "target": "es2020",
+    "module": "es2020",
+    "paths": {
+      "react-dom/*": [
+        "@hot-loader/react-dom/*"
+      ],
+      "@observagram/*": [
+        "src/*"
+      ],
+      "@observagram-shared/*": [
+        "src/shared/*"
+      ],
+      "@observagram-elements/*": [
+        "src/shared/components/*"
+      ],
+      "@observagram-modules/*": [
+        "src/modules/*"
+      ]
+    },
+    "baseUrl": "./"
+  },
+  "exclude": [
+    "dist",
+    "node_modules",
+    "build",
+    ".vscode",
+    "coverage",
+    "jspm_packages",
+    "tmp",
+    "temp",
+    ".npm",
+    ".yarn"
+  ],
+  "typeAcquisition": {
+    "enable": true
+  }
+}

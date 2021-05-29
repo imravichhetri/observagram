@@ -1,8 +1,10 @@
 import React from 'react'
 
-import './styles.scss';
-import {userProfileData} from '@mocks/user-profile.data.js';
+import {userProfileData, userImages} from '@mocks/user-profile.data.js';
 import useBreakpoint from '@observagram-shared/hooks/useBreakpoint';
+import ImageGrid from '@observagram-shared/components/image-grid';
+
+import './styles.scss';
 
 const Biography = ({userInfo}) => {
   return (
@@ -82,8 +84,8 @@ const UserProfile = props => {
         }
         </div>
       </section>
-      <div className="user-images">
-        {/* <ImageGrid/> */}
+      <div className={`user-images ${isMdOrLarger? 'container':''}`}>
+        <ImageGrid userImages={userImages}/>
       </div>
     </>
   )

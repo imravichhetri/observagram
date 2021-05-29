@@ -1,0 +1,25 @@
+ul.image-grid{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  list-style: none;
+  li{
+    display: inline-block;
+    width: 32%;
+    height: 40vh;
+    margin-bottom: 28px;
+    &>img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+}
+
+@media (max-width: 735px) {
+  ul.image-grid{
+    li{
+      margin-bottom: 14px;
+    }
+  }
+}
