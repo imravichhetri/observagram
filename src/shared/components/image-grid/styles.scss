@@ -1,17 +1,24 @@
 ul.image-grid{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  // justify-content: space-between;
   list-style: none;
   li{
     display: inline-block;
     width: 32%;
     height: 38vh;
-    margin-bottom: 25px;
+    margin-bottom: 5px;
+    cursor: pointer;
     &>img{
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+    &:nth-child(3n+1){
+      margin-right: 5px;
+    }
+    &:nth-child(3n+3){
+      margin-left: 5px;
     }
   }
 }

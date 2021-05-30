@@ -1,0 +1,28 @@
+.post-container{
+  height: 80%;
+  display: flex;
+  color: rgba(var(--primary-black));
+  &>div:first-child{
+    width: 60%;
+    background-color: rgba(var(--primary-black));
+    img{
+      height: 100%;
+    }
+  }
+  &>div:nth-child(2){
+    flex: 1;
+    background-color: #fff;
+  }
+}
+
+@media screen and (max-width:735px) {
+  .post-container{
+    flex-direction: column;
+    &>div:first-child{
+      width: 100%;
+    }
+    &>div:nth-child(2){
+      flex: 1;
+    }
+  }
+}

@@ -1,8 +1,11 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 import {userProfileData, userImages} from '@mocks/user-profile.data.js';
+import {comments} from '@mocks/comments.data'; 
 import useBreakpoint from '@observagram-shared/hooks/useBreakpoint';
 import ImageGrid from '@observagram-shared/components/image-grid';
+import Modal from '@observagram-shared/components/modal';
+import Post from '@observagram-shared/components/post';
 
 import './styles.scss';
 
@@ -46,7 +49,15 @@ const Stats = ({stats}) => {
   )
 }
 const UserProfile = props => {
+  const [showModal, setShowModal] = useState(false);
+  const [selectedData, setSelectedData] = useState({});
   const {isMdOrLarger} = useBreakpoint();
+  const _onPostClick = (imageObj) => {
+    if(isMdOrLarger) {
+      setShowModal(true)
+    }
+    setSelectedData(imageObj)
+  }
   return (
     <>
       <section className="container user-profile-container">
@@ -85,8 +96,14 @@ const UserProfile = props => {
         </div>
       </section>
       <div className={`user-images ${isMdOrLarger? 'container':''}`}>
-        <ImageGrid userImages={userImages}/>
+        <ImageGrid userImages={userImages} onClick={_onPostClick}/>
       </div>
+      {showModal && (
+          <Modal> 
+            <Post selectedData={selectedData} selectedUser={userProfileData} comments={comments}/>
+          </Modal>
+        )
+      }
     </>
   )
 }

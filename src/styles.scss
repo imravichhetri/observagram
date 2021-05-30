@@ -3,6 +3,7 @@
   --highlight-color: 219,219,219;
   --fade-color: 142,142,142;
   --primary-blue: 0,149,246;
+  --primary-black: 0,0,0;
 
   --layout-width: 975px;
   font-size: 16px;
@@ -52,6 +53,9 @@
   text-align: center;
 }
 
+.full-width{
+  width: 100%;
+}
 .resp-row-flex {
   display: flex;
 }

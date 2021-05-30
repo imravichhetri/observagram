@@ -2,7 +2,7 @@ import React, {useEffect} from 'react'
 
 import './styles.scss';
 
-const ImageGrid = ({userImages}) => {
+const ImageGrid = ({userImages, onClick=()=>{}}) => {
   useEffect(() => {
     function intersection() {
       const lazyImages = [].slice.call(document.querySelectorAll("img.lazy"));
@@ -27,17 +27,13 @@ const ImageGrid = ({userImages}) => {
       }
     }
     intersection();
-    // document.addEventListener("DOMContentLoaded",intersection );
-    // return () => {
-    //   document.removeEventListener('DOMContentLoaded',intersection)
-    // }
-  }, [])
+  }, [userImages])
   return (
     <ul className="image-grid">
       {
         userImages.map((imageObj)=>{
           return (
-            <li>
+            <li onClick={(e)=>onClick(imageObj)}>
               <img class="lazy" data-src={imageObj.image_url} alt="" loading="lazy"/>
             </li>
           )

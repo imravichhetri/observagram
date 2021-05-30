@@ -1,0 +1,39 @@
+.comments-container{
+  color: rgba(var(--primary-black));
+  overflow-y: scroll;
+  height: calc(100% - 72px - 120px);
+}
+
+
+
+.comment-container {
+  padding: 5px;
+  margin-bottom: 15px;
+  .pic-container{
+    height: 32px;
+    width: 32px;
+    img{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+  .comment-content-container{
+    text-align: start;
+    padding-left: 15px;
+    font-family: sans-serif;
+    font-size: 0.8rem;
+    .comment-stats{
+      color: rgba(var(--fade-color));
+      span{
+        margin-right: 15px;
+      }
+    }
+  }
+}
+
+.comment-input {
+  border-top: 1px solid rgba(var(--highlight-color));
+  height: 120px;
+}
